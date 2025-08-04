@@ -15,53 +15,7 @@ A simple web platform to help rural users book essential products like groceries
 - ✅ Node.js + Express API
 - ✅ Mobile responsive design (Bootstrap)
 
----
 
-## 🗂️ Project Structure
-
-/backend
-
-├── models/
-
-│ ├── User.js
-
-│ ├── Booking.js
-
-│ └── Contact.js
-
-├── routes/
-
-│ ├── auth.js
-
-│ ├── booking.js
-
-│ └── contact.js
-
-├── server.js
-
-└── .env
-
-/frontend
-
-├── index.html
-
-├── signin.html
-
-├── signup.html
-
-├── home.html
-
-└── dashboard.html
-
----
-
-## 🔗 Live Demo
-
-> 🌐 [Click Here to View Live]()
-
-_(Replace this link with your actual Vercel/GitHub Pages URL)_
-
----
 
 ## 🎯 Working Process
 
