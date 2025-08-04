@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rural Access Platform</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: #f9f9f9;
+    }
+    .navbar-brand {
+      font-weight: bold;
+      color: #2e7d32 !important;
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1570129477492-45c003edd2be') no-repeat center center/cover;
+      height: 60vh;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    }
+    .card img {
+      height: 100px;
+      object-fit: contain;
+    }
+    .card {
+      border-radius: 12px;
+    }
+    .section-title {
+      color: #2e7d32;
+      margin-bottom: 30px;
+    }
+    footer {
+      background-color: #2e7d32;
+      color: white;
+      padding: 15px 0;
+    }
+    .contact-form input, .contact-form textarea {
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    .list-group-item {
+      background-color: #e8f5e9;
+    }
+    .navbar-nav .nav-link {
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="#">RuralAccess</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="#news">News</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item">
+  <a class="btn btn-outline-success ms-3" href="dashboard.html">Booked Items</a>
+</li>
+<li class="nav-item">
+  <button class="btn btn-danger ms-2" onclick="logoutUser()">Logout</button>
+</li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero text-center">
+    <div>
+      <h1 class="display-4">Empowering Rural India</h1>
+      <p class="lead">Find essential products and services easily.</p>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-5">
+    <div class="container text-center">
+      <h2 class="section-title">Our Services</h2>
+      <div class="row g-4">
+        <div class="col-md-2 col-6">
+          <div class="card p-2 shadow-sm">
+            <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="Grocery">
+            <p class="mt-2">Grocery Delivery</p>
+          </div>
+        </div>
+        <div class="col-md-2 col-6">
+          <div class="card p-2 shadow-sm">
+            <img src="https://cdn-icons-png.flaticon.com/512/3523/3523063.png" alt="Medicine">
+            <p class="mt-2">Medicine Supply</p>
+          </div>
+        </div>
+        <div class="col-md-2 col-6">
+          <div class="card p-2 shadow-sm">
+            <img src="https://cdn-icons-png.flaticon.com/512/1356/1356546.png" alt="Water">
+            <p class="mt-2">Clean Water</p>
+          </div>
+        </div>
+        <div class="col-md-2 col-6">
+          <div class="card p-2 shadow-sm">
+            <img src="https://cdn-icons-png.flaticon.com/512/1839/1839024.png" alt="Seeds">
+            <p class="mt-2">Agri Seeds</p>
+          </div>
+        </div>
+        <div class="col-md-2 col-6">
+          <div class="card p-2 shadow-sm">
+            <img src="https://cdn-icons-png.flaticon.com/512/194/194642.png" alt="Education">
+            <p class="mt-2">Education Kits</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section id="products" class="py-5 bg-light">
+  <div class="container text-center">
+    <h2 class="section-title">Available Products</h2>
+    <div class="row g-4" id="product-list">
+      <!-- JavaScript will insert product cards here -->
+    </div>
+    <button class="btn btn-success mt-4" onclick="submitBooking()">Book Selected Items</button>
+  </div>
+</section>
+
+  <!-- News -->
+  <section id="news" class="py-5">
+    <div class="container">
+      <h2 class="section-title text-center">News & Updates</h2>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">🌾 Govt announces subsidy for organic farming tools.</li>
+        <li class="list-group-item">💊 Mobile health camps scheduled in 20 villages this week.</li>
+        <li class="list-group-item">🚰 Free water purification drive launched in rural zones.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center section-title">Contact Us</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <h5>Address</h5>
+          <p>Gram Sewa Office, Village Road, Karnataka</p>
+          <h5>Helpline</h5>
+          <p>1800-111-2345</p>
+        </div>
+        <div class="col-md-6">
+          <form class="contact-form"  onsubmit="submitContact(event)">
+            <div class="mb-3">
+              <input type="text" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="mb-3">
+              <textarea class="form-control" placeholder="Your Message" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-success">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center">
+    <div class="container">
+      <p>&copy; 2025 RuralAccess. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  const products = [
+    { name: "Rice", price: "₹40/kg", img: "https://cdn-icons-png.flaticon.com/512/2553/2553691.png" },
+    { name: "Milk", price: "₹50/L", img: "https://cdn-icons-png.flaticon.com/512/869/869636.png" },
+    { name: "Soap", price: "₹25", img: "https://cdn-icons-png.flaticon.com/512/1341/1341916.png" },
+    { name: "Toothpaste", price: "₹30", img: "https://cdn-icons-png.flaticon.com/512/3064/3064197.png" },
+    { name: "Oil", price: "₹120/L", img: "https://cdn-icons-png.flaticon.com/512/3082/3082020.png" },
+    { name: "Wheat", price: "₹35/kg", img: "https://cdn-icons-png.flaticon.com/512/1046/1046857.png" }
+  ];
+
+  const productList = document.getElementById("product-list");
+  products.forEach((prod, index) => {
+    productList.innerHTML += `
+      <div class="col-md-4">
+        <div class="card shadow-sm">
+          <img src="${prod.img}" class="card-img-top" alt="${prod.name}">
+          <div class="card-body">
+            <h5>${prod.name}</h5>
+            <p>${prod.price}</p>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="prod-${index}" value="${prod.name}">
+              <label class="form-check-label" for="prod-${index}">Add to cart</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  });
+
+  function submitBooking() {
+  const selectedCheckboxes = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'));
+  const selected = selectedCheckboxes.map(cb => cb.value);
+
+  const user = JSON.parse(localStorage.getItem("user"));
+  console.log("User from localStorage:", user);
+
+  if (!user || !user.email) {
+    alert("Please login before booking.");
+    return;
+  }
+
+  fetch("http://localhost:5000/api/book", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ items: selected, user })
+  })
+    .then(res => res.json())
+    .then(data => {
+      alert("Booking successful: " + data.message);
+      // ✅ Clear checkboxes
+      selectedCheckboxes.forEach(cb => cb.checked = false);
+    })
+    .catch(err => {
+      console.error("Booking error:", err);
+      alert("Booking failed. Check console.");
+    });
+}
+
+function logoutUser() {
+  localStorage.removeItem("user");
+  alert("Logged out successfully.");
+  window.location.href = "signin.html"; // Or your actual login page
+}
+function submitContact(event) {
+  event.preventDefault();
+
+  const name = document.querySelector('.contact-form input').value;
+  const message = document.querySelector('.contact-form textarea').value;
+
+  fetch('http://localhost:5000/api/contact', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name, message })
+  })
+  .then(res => res.json())
+  .then(data => {
+    alert("Message sent successfully!");
+    document.querySelector('.contact-form').reset();
+  })
+  .catch(err => {
+    console.error(err);
+    alert("Error sending message.");
+  });
+}
+
+
+</script>
+</body>
+</html>
