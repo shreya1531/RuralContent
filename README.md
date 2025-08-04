@@ -69,6 +69,7 @@ _(Replace this link with your actual Vercel/GitHub Pages URL)_
 - Visit `signup.html`
 - Fill in full name, email, and password
 - Account is saved in MongoDB
+- 
 
 ### 2. Login
 - Visit `signin.html`
