@@ -20,22 +20,37 @@ A simple web platform to help rural users book essential products like groceries
 ## 🗂️ Project Structure
 
 /backend
+
 ├── models/
+
 │ ├── User.js
+
 │ ├── Booking.js
+
 │ └── Contact.js
+
 ├── routes/
+
 │ ├── auth.js
+
 │ ├── booking.js
+
 │ └── contact.js
+
 ├── server.js
+
 └── .env
 
 /frontend
+
 ├── index.html
+
 ├── signin.html
+
 ├── signup.html
+
 ├── home.html
+
 └── dashboard.html
 
 ---
